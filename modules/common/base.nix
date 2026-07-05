@@ -3,18 +3,38 @@
 {
   time.timeZone = "Australia/Melbourne";
 
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
+  i18n.defaultLocale = "en_AU.UTF-8";
+
+  console.keyMap = "us";
+
+  nix.settings = {
+    experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
+
+    auto-optimise-store = true;
+
+    trusted-users = [
+      "root"
+      "@wheel"
+    ];
+  };
+
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 30d";
+  };
 
   environment.systemPackages = with pkgs; [
     git
-    vim
-    nano
     curl
     wget
+    vim
+    nano
     htop
+    pciutils
   ];
 
   boot.loader.systemd-boot.enable = true;

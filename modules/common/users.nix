@@ -7,6 +7,10 @@
       "wheel"
       "networkmanager"
     ];
+
+    openssh.authorizedKeys.keyFiles = [
+      ../../ssh/laptop.pub
+    ];
   };
 
   security.sudo.wheelNeedsPassword = true;

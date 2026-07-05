@@ -9,8 +9,8 @@
 
     settings = {
       user = {
-        name = "Nathan";
-        email = "your-email@example.com";
+        name = "divadnebnahtan";
+        email = "davidbennathan@gmail.com";
       };
 
       init.defaultBranch = "main";
