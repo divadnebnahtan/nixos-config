@@ -3,7 +3,7 @@
 {
   services.openssh = {
     enable = true;
-    openFirewall = true;
+    openFirewall = false;
 
     settings = {
       PermitRootLogin = "no";
@@ -11,7 +11,7 @@
       KbdInteractiveAuthentication = false;
       X11Forwarding = false;
       AllowAgentForwarding = false;
-      AllowTcpForwarding = false;
+      AllowTcpForwarding = "local";
       PermitTunnel = false;
     };
   };
