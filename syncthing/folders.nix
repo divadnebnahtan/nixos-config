@@ -12,11 +12,4 @@
     path = "/srv/syncthing/Obsidian";
     devices = [ "pc" "laptop" "iphone" ];
   };
-
-  camera = {
-    id = "camera";
-    label = "Camera";
-    path = "/srv/syncthing/Camera";
-    devices = [ "pc" "laptop" "iphone" ];
-  };
 }
