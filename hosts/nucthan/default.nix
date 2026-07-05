@@ -10,6 +10,7 @@
     ../../modules/common/firewall.nix
 
     ../../modules/services/ssh.nix
+    ../../modules/services/tailscale.nix
   ];
 
   networking.hostName = "nucthan";
