@@ -36,6 +36,7 @@
     htop
     pciutils
     openssl
+    nginx
   ];
 
   boot.loader.systemd-boot.enable = true;

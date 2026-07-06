@@ -14,6 +14,7 @@
     ../../modules/services/syncthing.nix
     ../../modules/services/immich.nix
     ../../modules/services/traccar.nix
+    ../../modules/services/nginx.nix
   ];
 
   networking.hostName = "nucthan";
