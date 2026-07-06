@@ -35,6 +35,7 @@
     nano
     htop
     pciutils
+    openssl
   ];
 
   boot.loader.systemd-boot.enable = true;

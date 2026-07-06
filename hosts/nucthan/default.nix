@@ -13,6 +13,7 @@
     ../../modules/services/tailscale.nix
     ../../modules/services/syncthing.nix
     ../../modules/services/immich.nix
+    ../../modules/services/traccar.nix
   ];
 
   networking.hostName = "nucthan";
