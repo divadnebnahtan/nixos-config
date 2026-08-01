@@ -8,9 +8,14 @@
       url = "github:nix-community/home-manager/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nixflix = {
+      url = "github:kiriwalawren/nixflix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }:
+  outputs = { self, nixpkgs, home-manager, nixflix, ... }:
   {
     nixosConfigurations.nucthan = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
@@ -21,6 +26,8 @@
 
       modules = [
         ./hosts/nucthan
+
+        nixflix.nixosModules.default
 
         home-manager.nixosModules.home-manager
         {
