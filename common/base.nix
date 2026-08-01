@@ -38,6 +38,11 @@
     openssl
     nginx
   ];
+  
+  environment.shellAliases = {
+    scripts-rebuild = "~/nixos-config/scripts/scripts-rebuild.sh";
+    scripts-test = "~/nixos-config/scripts/scripts-test.sh";
+  };
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
