@@ -1,6 +1,8 @@
 { ... }:
 
 {
+  networking.hostName = "nucthan";
+  
   networking.networkmanager.enable = true;
   
   networking.firewall = {

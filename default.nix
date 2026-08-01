@@ -14,7 +14,5 @@
     ./services/immich.nix
   ];
 
-  networking.hostName = "nucthan";
-
   system.stateVersion = "26.05";
 }
