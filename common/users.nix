@@ -1,7 +1,7 @@
 { ... }:
 
 let
-  keyDir = ../../ssh;
+  keyDir = ../data/ssh;
 
   keyFiles =
     builtins.map

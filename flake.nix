@@ -25,7 +25,7 @@
       };
 
       modules = [
-        ./hosts/nucthan
+        ./default.nix
 
         nixflix.nixosModules.default
 
@@ -33,7 +33,7 @@
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.users.nathan = import ./home/nathan;
+          home-manager.users.nathan = import ./home.nix;
         }
       ];
     };

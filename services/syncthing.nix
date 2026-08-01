@@ -1,8 +1,8 @@
 { lib, ... }:
 
 let
-  devices = import ../../syncthing/devices.nix;
-  folders = import ../../syncthing/folders.nix;
+  devices = import ../data/syncthing/devices.nix;
+  folders = import ../data/syncthing/folders.nix;
 
   folderPaths = 
     lib.mapAttrsToList
