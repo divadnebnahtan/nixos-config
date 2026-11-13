@@ -31,7 +31,9 @@
     psmisc # killall; fuser; pstree
 
     cowsay
-    fortune
+    (fortune.override {
+      withOffensive = true;
+    })
     nyancat
     asciiquarium
     tty-clock
