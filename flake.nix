@@ -27,7 +27,6 @@
 
           modules = [
             ./shared/default.nix
-            ./shared/packages.nix
           ] ++ [
             ./hosts/${hostname}
           ];
@@ -35,8 +34,8 @@
     in
     {
       nixosConfigurations = {
-        laptop = mkSystem {
-          hostname = "laptop";
+        laptop = mkSystem { # flake name e.g. sudo nixos-rebuild switch .#laptop
+          hostname = "laptop"; # decides which hosts folder to use
           system = "x86_64-linux";
         };
 
