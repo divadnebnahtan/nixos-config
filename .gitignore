@@ -4,3 +4,48 @@ result-*
 .env
 *.key
 secrets/
+
+# GitHub project hygiene
+# Local tools, caches, and credentials
+.DS_Store
+Thumbs.db
+Desktop.ini
+.idea/
+.vscode/
+*.iml
+*.swp
+*.swo
+*.tmp
+*.log
+.env
+.env.*
+!.env.example
+!.env.sample
+!.env.template
+.local/
+*.local
+*.pem
+*.key
+id_rsa
+id_ed25519
+.cache
+.cache/
+.spotify-cache*
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+node_modules/
+*.tsbuildinfo
+coverage/
+# Nix build symlinks (keep flake.lock)
+/result
+/result-*
+.direnv/
+/.devenv/
+# Always publish this project policy
+!/.gitignore
