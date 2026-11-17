@@ -14,16 +14,16 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/mapper/luks-f9d82b99-8456-4e8c-9d0c-aa45d7c47bed";
+    { device = "/dev/mapper/cryptroot";
       fsType = "ext4";
     };
 
-  boot.initrd.luks.devices."luks-f9d82b99-8456-4e8c-9d0c-aa45d7c47bed".device = "/dev/disk/by-uuid/f9d82b99-8456-4e8c-9d0c-aa45d7c47bed";
+  boot.initrd.luks.devices."cryptroot".device = "/dev/disk/by-uuid/94165104-01bf-4abb-8603-88fdd0f1099b";
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/343E-618E";
+    { device = "/dev/disk/by-uuid/3401-1BB9";
       fsType = "vfat";
-      options = [ "fmask=0077" "dmask=0077" ];
+      options = [ "fmask=0022" "dmask=0022" ];
     };
 
   swapDevices = [ ];
