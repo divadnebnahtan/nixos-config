@@ -34,5 +34,5 @@
 #     '';
 #   };
 
-  environment.systemPackages = [ pkgs.tail-tray ]
+  environment.systemPackages = [ pkgs.tail-tray ];
 }
