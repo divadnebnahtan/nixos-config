@@ -44,6 +44,10 @@
     Defaults rootpw
   '';
 
+  environment.sessionVariables = {
+    SHELL = "${pkgs.fish}/bin/fish";
+  };
+
   documentation.man.cache.enable = false;
 
   programs.git = {
