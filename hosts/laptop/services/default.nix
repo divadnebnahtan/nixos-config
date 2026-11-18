@@ -1,7 +1,7 @@
 { ... }:
 {
   imports = [
-    ./syncthing.nix
+#     ./syncthing.nix
     ./tailscale.nix
   ];
 }

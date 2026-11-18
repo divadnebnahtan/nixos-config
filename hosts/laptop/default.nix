@@ -4,7 +4,7 @@
     ./hardware-configuration.nix
     ./packages.nix
     ./graphics.nix
-    # ./services
+    ./services
   ];
 
   networking.hostName = "NathanLaptop";

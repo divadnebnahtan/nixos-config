@@ -5,7 +5,7 @@
   #
   # pc: steamtinkerlaunch, bottles, mangohud, gamemode, protonup-qt, protonup-ng (proton-ge), winetricks, gamescope, amdgpu_top
   environment.systemPackages = with pkgs; [
-    # inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
+    inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
     # feishin
     # vlc
     # obsidian
@@ -23,6 +23,7 @@
 
   programs.nix-ld.enable = true;
   # programs.steam.enable = true;
-  # programs.obs-studio.enable = true;
-  # programs.zoom-us.enable = true;
+  programs.obs-studio.enable = true;
+  programs.zoom-us.enable = true;
+  programs.localsend.enable = true;
 }
