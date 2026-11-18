@@ -18,7 +18,6 @@
     # unstable.t3code
 
     # syncthingtray
-    # tail-tray
   ];
 
   programs.nix-ld.enable = true;

@@ -33,4 +33,6 @@
 #       ${pkgs.ethtool}/bin/ethtool -K wlp0s20f3 rx-udp-gro-forwarding on rx-gro-list off
 #     '';
 #   };
+
+  environment.systemPackages = [ pkgs.tail-tray ]
 }
