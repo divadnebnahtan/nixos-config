@@ -8,6 +8,7 @@
     openssl
     p7zip
     python3
+    ffmpeg
 
     eza # ls alternative
     fd # find alternative

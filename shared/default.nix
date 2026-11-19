@@ -7,6 +7,7 @@
   nix.settings = {
     experimental-features = [ "nix-command" "flakes" ];
     auto-optimise-store = true;
+    trusted-users = [ "root" "@wheel" ];
   };
 
   nixpkgs.config.allowUnfree = true;
@@ -40,10 +41,6 @@
     shell = pkgs.fish;
   };
 
-  security.sudo.extraConfig = ''
-    Defaults rootpw
-  '';
-
   documentation.man.cache.enable = false;
 
   programs.git = {
@@ -55,4 +52,6 @@
       pull.rebase = true;
     };
   };
+
+  system.stateVersion = "26.05";
 }

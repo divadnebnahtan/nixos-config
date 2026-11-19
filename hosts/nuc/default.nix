@@ -1,12 +1,29 @@
 { pkgs, ... }:
+
 {
-  imports = [ ./hardware-configuration.nix ./packages.nix ./services ];
-  networking.hostName = "NathanNuc";
-  system.stateVersion = "26.05";
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-  networking.nameservers = [ "1.1.1.1" ];
-  hardware.bluetooth = { enable = true; powerOnBoot = false; };
+  imports = [
+    ./hardware-configuration.nix
+    ./services
+  ];
+
+  networking = {
+    hostName = "NathanNUC";
+    nameservers = [ "1.1.1.1" ];
+  };
+
   users.groups.media = {};
   users.users.nathan.extraGroups = [ "media" "syncthing" ];
+
+  # environment.systemPackages = with pkgs; [
+    # git
+    # speedtest-cli
+    # tree
+    # gdu
+    # bluez
+    # ffmpeg
+  # ];
+
   security.sudo.wheelNeedsPassword = true;
+
+  environment.shellAliases.scripts-rebuild = "/home/nathan/nixos-config/scripts/scripts-rebuild.sh";
 }

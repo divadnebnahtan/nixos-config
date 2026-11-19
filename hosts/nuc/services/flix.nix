@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ lib, ... }:
 
 {
   # 6767 = Bazarr
@@ -20,21 +20,7 @@
     "d /var/cache/jellyfin 0750 jellyfin media - -"
   ];
   
-  # Keep the password hash out of Git and the world-readable Nix store.
-  # The credential file contains the existing @ByteArray(...) value, one line.
-  systemd.services.qbittorrent.serviceConfig = {
-    UMask = lib.mkForce "0002";
-    LoadCredential = [ "webui-password:/var/lib/secrets/qbittorrent-password" ];
-    ExecStartPre = lib.mkAfter [ (pkgs.writeShellScript "qbittorrent-password" ''
-      set -euo pipefail
-      password=$(${pkgs.coreutils}/bin/cat "$CREDENTIALS_DIRECTORY/webui-password")
-      test -n "$password"
-      ${pkgs.crudini}/bin/crudini --set \
-        ${lib.escapeShellArg "${config.services.qbittorrent.profileDir}/qBittorrent/config/qBittorrent.conf"} \
-        Preferences 'WebUI\Password_PBKDF2' \
-        "$password"
-    '') ];
-  };
+  systemd.services.qbittorrent.serviceConfig.UMask = lib.mkForce "0002";
   systemd.services.radarr.serviceConfig.UMask = lib.mkForce "0002";
   systemd.services.sonarr.serviceConfig.UMask = lib.mkForce "0002";
   systemd.services.bazarr.serviceConfig.UMask = lib.mkForce "0002";
@@ -116,6 +102,7 @@
         };
         WebUI = {
           Username = "nathan";
+          Password_PBKDF2 = "@ByteArray(SBkFs9vLR2Tr288QQCd2jA==:tvFr2RgkQl+KVLudSEWdqAU44UtELlNDjh2AslE9TBiNkhv/ong3nsxcuQ1CR4PV7zWGvaU28+sv60LmGwec9w==)";
           ClickjackingProtection = false;
           
           LocalHostAuth = false;

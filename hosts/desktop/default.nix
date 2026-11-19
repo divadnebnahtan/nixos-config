@@ -9,6 +9,10 @@
 
   networking.hostName = "NathanDesktop";
 
+  security.sudo.extraConfig = ''
+    Defaults rootpw
+  '';
+
 #   hardware.bluetooth = {
 #     enable = true;
 #     powerOnBoot = true;

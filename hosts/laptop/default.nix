@@ -9,6 +9,10 @@
 
   networking.hostName = "NathanLaptop";
 
+  security.sudo.extraConfig = ''
+    Defaults rootpw
+  '';
+
   hardware.bluetooth = {
     enable = true;
     powerOnBoot = true;
@@ -37,5 +41,4 @@
     memoryPercent = 100;
   };
 
-  system.stateVersion = "26.05";
 }
