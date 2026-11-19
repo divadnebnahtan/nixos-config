@@ -1,8 +1,18 @@
-{ lib, ... }:
+{ lib, inputs, unstable, ... }:
 
 {
+  disabledModules = [
+    "services/web-apps/immich.nix"
+  ];
+
+  imports = [
+    "${inputs.nixpkgs-unstable}/nixos/modules/services/web-apps/immich.nix"
+  ];
+
   services.immich = {
     enable = true;
+    package = unstable.immich;
+
     user = "immich";
     group = "media";
 
@@ -21,7 +31,7 @@
   ];
 
   networking.firewall.allowedTCPPorts = [ 2283 ];
-  
+
   systemd.services.immich-server.serviceConfig.UMask = lib.mkForce "0007";
   systemd.services.immich-machine-learning.serviceConfig.UMask = lib.mkForce "0007";
 }
