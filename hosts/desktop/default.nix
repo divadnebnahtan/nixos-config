@@ -9,9 +9,9 @@
 
   networking.hostName = "NathanDesktop";
 
-  security.sudo.extraConfig = ''
-    Defaults rootpw
-  '';
+  # security.sudo.extraConfig = ''
+  #   Defaults rootpw
+  # '';
 
 #   hardware.bluetooth = {
 #     enable = true;
@@ -41,5 +41,5 @@
     memoryPercent = 100;
   };
 
-  system.stateVersion = "26.05";
+  # system.stateVersion = "26.05";
 }
