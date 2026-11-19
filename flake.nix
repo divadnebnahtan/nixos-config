@@ -11,7 +11,7 @@
 
   };
 
-  outputs = inputs@{ nixpkgs, nix-minecraft, ... }:
+  outputs = inputs@{ nixpkgs, ... }:
     let
       mkSystem = { hostname, system }:
         nixpkgs.lib.nixosSystem {

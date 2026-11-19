@@ -6,7 +6,6 @@
   # ─────────────────────────────────────
 
   services.xserver.enable = true;
-  services.xserver.libinput.enable = true;
 
   services.xserver.xkb = {
     layout = "us,il";
@@ -16,10 +15,10 @@
   services.libinput.enable = true;
 
   services.displayManager.sddm = {
-    enable = false;
-#     wayland.enable = true;
+    enable = true;
+    wayland.enable = true;
   };
-  services.displayManager.plasma-login-manager.enable = true;
+  # services.displayManager.plasma-login-manager.enable = true;
 
   # ─────────────────────────────────────
   # KDE Plasma 6
