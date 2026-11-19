@@ -8,9 +8,10 @@
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
+
   };
 
-  outputs = inputs@{ nixpkgs, ... }:
+  outputs = inputs@{ nixpkgs, nix-minecraft, ... }:
     let
       mkSystem = { hostname, system }:
         nixpkgs.lib.nixosSystem {

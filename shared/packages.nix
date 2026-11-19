@@ -7,6 +7,7 @@
     pciutils
     openssl
     p7zip
+    python3
 
     eza # ls alternative
     fd # find alternative

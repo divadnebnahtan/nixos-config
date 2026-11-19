@@ -9,8 +9,6 @@
 
   networking.hostName = "NathanLaptop";
 
-  # PC: cpu.amd.updateMicrocode = true;
-
   hardware.bluetooth = {
     enable = true;
     powerOnBoot = true;
